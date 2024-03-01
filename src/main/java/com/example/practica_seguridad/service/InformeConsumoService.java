@@ -106,10 +106,6 @@ public class InformeConsumoService implements IInformeConsumo {
     @Transactional
     public List<InformeConsumo> findByFecha(DepositoAgua depositoAgua, Date fecha) {
         try {
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-            Date fechaFormateada = formatter.parse(fecha);
-            System.out.println("Fecha formateada: " + fechaFormateada);
-            System.out.println("Fecha formateada: " + fecha);
             return informeConsumoRepository.findByDepositoAguaAndFecha(depositoAgua, fecha);
         } catch (Exception e) {
             return new ArrayList<>();
