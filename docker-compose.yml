@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+  java_app:
+    container_name: java_app
+    image: pee-java-app:1.0.0
+    build: .
+    ports:
+      - 8080:8080
+    environment:
+      - DATABASE_URL=jdbc:postgresql://190.15.134.8:7070/irrigation_system
+      - DATABASE_USERNAME=appweb
+      - DATABASE_PASSWORD=@Aplicaciones@Web@2021
+    #depends_on:
+     # - java_db
+  #java_db:
+   # container_name: java_db
+    #image: postgres:12
+    #ports:
+     # - 5432:5432
+    #environment:
+     # POSTGRES_USER: postgres
+      #POSTGRES_PASSWORD: 0929415636
+      #POSTGRES_DB: postgres
